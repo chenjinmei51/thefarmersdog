@@ -1,89 +1,87 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-header {
-    background-color: #4CAF50;
+header.hero {
+    background-color: #0073e6;
     color: white;
     text-align: center;
     padding: 2rem;
 }
 
-header .cta {
+header.hero .cta {
     display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
     background-color: #ff9800;
     color: white;
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
     text-decoration: none;
     border-radius: 5px;
 }
 
-section {
+.comparison-section {
     margin: 2rem auto;
     padding: 1rem;
-    width: 80%;
+    width: 90%;
+    max-width: 1200px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    color: #4CAF50;
-    margin-bottom: 0.5rem;
+.wide-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wide-table th, .wide-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.wide-table th {
+    background-color: #0073e6;
+    color: white;
+}
+
+.pros-cons {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .pros, .cons {
-    display: inline-block;
-    width: 45%;
-    vertical-align: top;
-}
-
-.pros ul, .cons ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.pros ul li:before {
-    content: '✔️';
-    margin-right: 0.5rem;
-    color: green;
-}
-
-.cons ul li:before {
-    content: '❌';
-    margin-right: 0.5rem;
-    color: red;
-}
-
-.discount-card {
-    background-color: #ffeb3b;
+    background: white;
     padding: 1rem;
-    margin-top: 1rem;
-    text-align: center;
-    border-radius: 5px;
+    border-radius: 8px;
+    width: 48%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.discount-card .cta {
-    background-color: #4CAF50;
+.cta-section {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.cta-section .cta {
+    padding: 0.7rem 1.5rem;
+    background-color: #0073e6;
     color: white;
-    padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.faq details {
-    margin: 1rem 0;
-}
-
-.faq summary {
-    font-weight: bold;
-    cursor: pointer;
+.cta-section .cta:hover {
+    background-color: #005bb5;
 }
 
 footer {
@@ -91,9 +89,5 @@ footer {
     padding: 1rem;
     background-color: #333;
     color: white;
-}
-
-footer a {
-    color: #ff9800;
-    text-decoration: none;
+    margin-top: 2rem;
 }
