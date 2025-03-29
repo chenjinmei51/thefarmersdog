@@ -13,6 +13,7 @@ body {
     font-size: 14px;
 }
 
+/* 导航栏样式 */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -32,19 +33,63 @@ body {
     position: relative;
 }
 
-.nav-links li ul {
+.nav-links a {
+    text-decoration: none;
+    color: #2c3e50;
+    padding: 8px 12px;
+}
+
+.nav-links li > a::after {
+    content: '▼';
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.nav-links li > ul.dropdown {
     position: absolute;
     top: 100%;
     left: 0;
-    display: none;
     background-color: white;
+    border: 1px solid #ddd;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s;
 }
 
-.nav-links li:hover ul {
-    display: block;
+.nav-links li:hover > ul.dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
+
+.nav-links li ul.dropdown li ul.dropdown {
+    left: 100%;
+    top: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s;
+}
+
+.nav-links li ul.dropdown li:hover > ul.dropdown {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 下拉菜单的样式 */
+.nav-links li ul.dropdown a {
+    display: block;
+    padding: 8px 12px;
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.nav-links li ul.dropdown a:hover {
+    background-color: #f0f4f8;
+}
+
 
 .hero {
     position: relative;
