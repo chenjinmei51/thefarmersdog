@@ -5,139 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeliveryRank Style Review Page</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f2f5;
-            color: #333;
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "The Farmer’s Dog Review 2025: Best Dog Food?",
+        "description": "A detailed review of The Farmer’s Dog fresh dog food service with comparison tables, pros & cons, and expert opinions.",
+        "mainEntity": {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How much is The Farmer’s Dog per week?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The cost per week depends on the size of the dog and its level of activity."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is The Farmer’s Dog worth it?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, The Farmer’s Dog offers high-quality, fresh, human-grade dog food tailored to your dog's needs."
+                    }
+                }
+            ]
         }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        header.hero {
-            background: linear-gradient(135deg, #6A11CB 0%, #2575FC 100%);
-            color: white;
-            text-align: center;
-            padding: 3rem 0;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-        }
-        header.hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        header.hero .cta {
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.8rem 1.8rem;
-            background-color: #FF9800;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        header.hero .cta:hover {
-            background-color: #e68900;
-            transform: scale(1.05);
-        }
-        .comparison, .pros-cons, .cta-section {
-            background: white;
-            margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #2575FC;
-            margin-bottom: 1rem;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 1.5rem;
-        }
-        table th, table td {
-            padding: 1rem;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
-        table th {
-            background-color: #2575FC;
-            color: white;
-        }
-        .pros-cons {
-            display: flex;
-            justify-content: space-between;
-        }
-        .pros, .cons {
-            width: 48%;
-            padding: 1rem;
-            background: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
-        }
-        .cta-section .cta {
-            display: block;
-            width: 200px;
-            margin: 1rem auto;
-            padding: 0.8rem;
-            background-color: #2575FC;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        .cta-section .cta:hover {
-            background-color: #1a237e;
-            transform: scale(1.05);
-        }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #333;
-            color: white;
-            margin-top: 2rem;
-            border-radius: 0 0 12px 12px;
-        }
-    </style>
+    }
+    </script>
 </head>
 <body>
+    <!-- Header Section -->
     <header class="hero">
         <div class="container">
-            <h1>The Ultimate Review Page</h1>
-            <p>Discover the best options with a visually appealing layout and detailed comparison.</p>
+            <h1>The Farmer’s Dog Review 2025</h1>
+            <p>Discover why The Farmer’s Dog is highly rated by experts and dog owners alike.</p>
             <a href="#compare" class="cta">See Comparison Table</a>
         </div>
     </header>
 
-    <section class="comparison">
+    <!-- Comparison Table -->
+    <section id="compare" class="comparison">
         <div class="container">
             <h2>Comparison Table</h2>
             <table>
                 <thead>
                     <tr>
                         <th>Feature</th>
-                        <th>Platform A</th>
-                        <th>Platform B</th>
+                        <th>The Farmer’s Dog</th>
+                        <th>Competitor</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Quality</td>
-                        <td>Excellent</td>
-                        <td>Good</td>
+                        <td>Human-grade, fresh</td>
+                        <td>Standard kibble</td>
                     </tr>
                     <tr>
                         <td>Price</td>
-                        <td>$99</td>
-                        <td>$120</td>
+                        <td>$99 per month</td>
+                        <td>$120 per month</td>
                     </tr>
                     <tr>
                         <td>Support</td>
@@ -149,12 +79,35 @@
         </div>
     </section>
 
+    <!-- Pros and Cons Section -->
+    <section class="pros-cons">
+        <div class="container">
+            <div class="pros">
+                <h3>Pros</h3>
+                <ul>
+                    <li>High-quality ingredients</li>
+                    <li>Customizable meal plans</li>
+                    <li>Great customer support</li>
+                </ul>
+            </div>
+            <div class="cons">
+                <h3>Cons</h3>
+                <ul>
+                    <li>Higher price point</li>
+                    <li>Limited flavor options</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
             <a href="#" class="cta">Get The Best Deal Now</a>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2025 YourReviewSite - All rights reserved.</p>
