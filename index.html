@@ -3,60 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Review Page - DeliveryRank Style</title>
+    <title>DeliveryRank Style Review Page</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- JSON-LD Schema Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Modern Review Page - DeliveryRank Style",
-        "description": "A detailed and visually appealing review page with comparison tables and pros & cons.",
-        "mainEntity": {
-            "@type": "FAQPage",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "What is the best online course platform?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "The best online course platform varies depending on your needs, but popular choices include Coursera, Udemy, and Skillshare."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "How do I use discount codes?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "To use a discount code, simply copy the code and apply it during checkout on the provider's website."
-                    }
-                }
-            ]
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
         }
-    }
-    </script>
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header.hero {
+            background: linear-gradient(135deg, #6A11CB 0%, #2575FC 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        header.hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        header.hero .cta {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.8rem;
+            background-color: #FF9800;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        header.hero .cta:hover {
+            background-color: #e68900;
+            transform: scale(1.05);
+        }
+        .comparison, .pros-cons, .cta-section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #2575FC;
+            margin-bottom: 1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+        table th, table td {
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        table th {
+            background-color: #2575FC;
+            color: white;
+        }
+        .pros-cons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .pros, .cons {
+            width: 48%;
+            padding: 1rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+        }
+        .cta-section .cta {
+            display: block;
+            width: 200px;
+            margin: 1rem auto;
+            padding: 0.8rem;
+            background-color: #2575FC;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .cta-section .cta:hover {
+            background-color: #1a237e;
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            margin-top: 2rem;
+            border-radius: 0 0 12px 12px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Hero Section -->
     <header class="hero">
         <div class="container">
-            <h1>Comprehensive Review - Modern Style</h1>
-            <p>Discover the best options with our in-depth comparison and analysis.</p>
+            <h1>The Ultimate Review Page</h1>
+            <p>Discover the best options with a visually appealing layout and detailed comparison.</p>
             <a href="#compare" class="cta">See Comparison Table</a>
         </div>
     </header>
 
-    <!-- Review Summary Section -->
-    <section class="summary">
-        <div class="container">
-            <h2>Overview</h2>
-            <p>This review page is designed to provide a detailed comparison of various platforms with a modern, visually appealing layout.</p>
-        </div>
-    </section>
-
-    <!-- Comparison Table -->
-    <section id="compare" class="comparison">
+    <section class="comparison">
         <div class="container">
             <h2>Comparison Table</h2>
             <table>
@@ -88,35 +149,12 @@
         </div>
     </section>
 
-    <!-- Pros and Cons Section -->
-    <section class="pros-cons">
-        <div class="container">
-            <div class="pros">
-                <h3>Pros</h3>
-                <ul>
-                    <li>High-quality content</li>
-                    <li>Responsive design</li>
-                    <li>Visually appealing</li>
-                </ul>
-            </div>
-            <div class="cons">
-                <h3>Cons</h3>
-                <ul>
-                    <li>Requires customization</li>
-                    <li>Not suitable for all devices</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
             <a href="#" class="cta">Get The Best Deal Now</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2025 YourReviewSite - All rights reserved.</p>
