@@ -3,7 +3,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #f4f4f4;
     color: #333;
 }
 
@@ -14,82 +14,91 @@ body {
 }
 
 header.hero {
-    background: #283593;
+    background: linear-gradient(135deg, #4A90E2, #0073e6);
     color: white;
     text-align: center;
-    padding: 2rem 0;
-}
-
-header.hero h1 {
-    font-size: 2.5rem;
+    padding: 2.5rem 0;
+    border-radius: 12px;
+    margin-top: 20px;
 }
 
 header.hero .cta {
     display: inline-block;
-    margin-top: 1rem;
-    padding: 0.7rem 1.5rem;
-    background-color: #ff9800;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.8rem;
+    background-color: #FF9800;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    transition: background-color 0.3s;
 }
 
 header.hero .cta:hover {
     background-color: #e68900;
 }
 
-.summary, .comparison, .cta-section {
-    margin: 2rem auto;
-    padding: 1.5rem;
+.summary, .comparison, .pros-cons, .cta-section {
     background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
+    color: #0073e6;
     margin-bottom: 1rem;
-    color: #283593;
 }
 
-table {
+.comparison table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1rem 0;
 }
 
-table th, table td {
+.comparison th, .comparison td {
     padding: 1rem;
+    border-bottom: 1px solid #ddd;
     text-align: left;
-    border: 1px solid #ddd;
 }
 
-table th {
-    background-color: #3f51b5;
+.comparison th {
+    background-color: #0073e6;
     color: white;
+}
+
+.pros-cons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pros, .cons {
+    width: 48%;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
 }
 
 .cta-section .cta {
+    display: block;
+    margin: 0 auto;
     padding: 0.7rem 2rem;
-    background-color: #283593;
+    background-color: #0073e6;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    transition: background-color 0.3s;
 }
 
 .cta-section .cta:hover {
-    background-color: #1a237e;
+    background-color: #005bb5;
 }
 
 footer {
+    text-align: center;
+    padding: 1rem;
     background-color: #333;
     color: white;
-    text-align: center;
-    padding: 1rem 0;
     margin-top: 2rem;
-}
-
-footer p {
-    margin: 0;
+    border-radius: 0 0 12px 12px;
 }
