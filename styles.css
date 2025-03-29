@@ -33,6 +33,47 @@ body {
     position: relative;
 }
 
+/* 所有下拉菜单默认隐藏 */
+.nav-links li > ul.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transform: translateY(10px);
+    transition: all 0.3s;
+}
+
+/* 鼠标移动到主菜单项时，显示下拉菜单 */
+.nav-links li:hover > ul.dropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* 下级菜单 */
+.nav-links li ul.dropdown li > ul.dropdown {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s;
+}
+
+/* 鼠标移动到次级菜单项时，显示下一个下拉菜单 */
+.nav-links li ul.dropdown li:hover > ul.dropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* 链接样式 */
 .nav-links a {
     text-decoration: none;
     color: #2c3e50;
@@ -43,39 +84,6 @@ body {
     content: '▼';
     font-size: 12px;
     margin-left: 5px;
-}
-
-.nav-links li > ul.dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s;
-}
-
-.nav-links li:hover > ul.dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.nav-links li ul.dropdown li ul.dropdown {
-    left: 100%;
-    top: 0;
-    transform: translateX(-10px);
-    transition: all 0.3s;
-}
-
-.nav-links li ul.dropdown li:hover > ul.dropdown {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(0);
 }
 
 /* 下拉菜单的样式 */
@@ -89,6 +97,7 @@ body {
 .nav-links li ul.dropdown a:hover {
     background-color: #f0f4f8;
 }
+
 
 
 .hero {
