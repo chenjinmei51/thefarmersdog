@@ -71,7 +71,7 @@
     </nav>
 
     <!-- JavaScript -->
- <script>
+<script>
 document.addEventListener('DOMContentLoaded', function () {
     const toggles = document.querySelectorAll('.menu-toggle');
     const dropdowns = document.querySelectorAll('.dropdown');
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const dropdown = this.nextElementSibling;
             const isMainMenu = this.closest('.nav-links > ul > li');
-            const menuName = this.innerText.trim(); // 获取菜单名称 (Meal Delivery 或 Reviews)
+            const menuName = this.innerText.trim(); // 获取菜单名称
 
             if (dropdown && dropdown.classList.contains('dropdown')) {
                 
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     dropdowns.forEach(d => {
                         if (d !== dropdown && d.closest('.nav-links > ul > li') && !d.closest('li').contains(this)) {
                             d.style.display = 'none';
-                            d.parentElement.classList.remove('active-meal-delivery', 'active-reviews');
+                            d.parentElement.classList.remove('active-menu'); // 移除所有激活状态
                         }
                     });
                 }
@@ -102,13 +102,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // 添加或移除激活状态类
                 if (dropdown.style.display === 'block') {
-                    if (menuName === 'Meal Delivery') {
-                        this.parentElement.classList.add('active-meal-delivery');
-                    } else if (menuName === 'Reviews') {
-                        this.parentElement.classList.add('active-reviews');
-                    }
+                    this.parentElement.classList.add('active-menu');
                 } else {
-                    this.parentElement.classList.remove('active-meal-delivery', 'active-reviews');
+                    this.parentElement.classList.remove('active-menu');
                 }
             }
         });
@@ -118,11 +114,12 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('click', function (e) {
         dropdowns.forEach(d => {
             d.style.display = 'none';
-            d.parentElement.classList.remove('active-meal-delivery', 'active-reviews');
+            d.parentElement.classList.remove('active-menu');
         });
     });
 });
 </script>
+
 
 </body>
 </html>
