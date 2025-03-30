@@ -21,7 +21,8 @@ body {
     align-items: center;
     padding: 10px 20px;
     background-color: white;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 3px solid #e0e0e0; /* 更粗的底线 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加阴影 */
 }
 
 .nav-links ul {
@@ -35,6 +36,16 @@ body {
 /* 主菜单项 */
 .nav-links li {
     position: relative;
+}
+
+/* 添加分隔线 */
+.nav-links li:not(:last-child)::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 20px;
+    background-color: #ddd;
+    margin-left: 20px;
 }
 
 /* 下拉菜单 */
@@ -71,11 +82,12 @@ body {
     display: block;
 }
 
-/* 仅为主菜单项和次级菜单项添加三角符号 */
-.nav-links > ul > li > a.menu-toggle::after, 
-.nav-links li ul.dropdown li > a.menu-toggle::after {
-    content: ' ▼';
-    font-size: 12px;
+/* 更美观的三角符号 (使用 SVG 图标) */
+.nav-links li > a.menu-toggle::after {
+    content: url('data:image/svg+xml,%3Csvg width="10" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0 L5 5 L10 0" fill="none" stroke="%232c3e50" stroke-width="2"/%3E%3C/svg%3E');
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 /* 普通链接不显示三角符号 */
