@@ -41,7 +41,8 @@ body {
 /* 主菜单项 */
 .nav-links > ul > li {
     position: relative;
-    display: flex;
+    display: block; /* 改为 block 让它自动占据完整宽度 */
+    margin-bottom: 5px; /* 增加间距，避免菜单重叠 */
     align-items: center;
 }
 
@@ -60,7 +61,7 @@ body {
 /* 下拉菜单 */
 .nav-links li > ul.dropdown {
     display: none;
-    position: absolute;
+    position: relative; /* 改为 relative，让下拉菜单影响布局 */
     top: 100%;
     left: 0;
     background-color: white;
