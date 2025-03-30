@@ -123,6 +123,73 @@ body {
     content: '';
 }
 
+/* Hero 区块的整体样式 */
+.hero {
+    position: relative;
+    height: 80vh; /* 占据屏幕的 80% 高度 */
+    background-image: url('your-background-image.jpg'); /* 替换为你的背景图片路径 */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero 内容的样式 */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.6); /* 半透明黑色背景提高可读性 */
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* 文字内容样式 */
+.text-content {
+    color: white;
+    max-width: 600px;
+}
+
+/* Hero 标题样式 */
+.text-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Hero 描述文字样式 */
+.text-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* 按钮样式 */
+.cta-button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: #2980b9;
+}
+
+/* 图片内容样式 */
+.image-content {
+    margin-left: 30px;
+}
+
+.hero-image {
+    width: 300px; /* 控制图片的宽度 */
+    border-radius: 10px;
+}
 
 
 
