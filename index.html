@@ -67,25 +67,24 @@ document.addEventListener('DOMContentLoaded', function () {
     toggles.forEach(toggle => {
         toggle.addEventListener('click', function (e) {
             e.preventDefault();
-            e.stopPropagation(); // 阻止事件冒泡
+            e.stopPropagation(); // 防止事件冒泡
 
             const dropdown = this.nextElementSibling;
 
-            // 判断当前点击的是主菜单还是子菜单
-            const isMainMenu = this.parentElement.parentElement.classList.contains('nav-links');
+            // 如果点击的是主菜单项
+            const isMainMenu = this.closest('.nav-links > ul > li');
 
             if (dropdown && dropdown.classList.contains('dropdown')) {
-
-                // 如果是主菜单，并且展开其他的主菜单项时，关闭所有其他主菜单
+                // 如果点击的是主菜单项，自动关闭其他主菜单项
                 if (isMainMenu) {
                     dropdowns.forEach(d => {
-                        if (d !== dropdown && d.parentElement.parentElement.classList.contains('nav-links')) {
+                        if (d !== dropdown && d.parentElement.closest('.nav-links > ul > li')) {
                             d.style.display = 'none';
                         }
                     });
                 }
 
-                // 切换当前菜单的显示状态
+                // 切换当前菜单显示状态
                 if (dropdown.style.display === 'block') {
                     dropdown.style.display = 'none';
                 } else {
@@ -95,13 +94,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // 点击页面其他地方时关闭所有菜单
+    // 点击页面的其他地方时，关闭所有菜单
     document.addEventListener('click', function (e) {
         dropdowns.forEach(d => {
             d.style.display = 'none';
         });
     });
 });
+
 
 
 
