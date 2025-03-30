@@ -67,19 +67,25 @@ document.addEventListener('DOMContentLoaded', function () {
     toggles.forEach(toggle => {
         toggle.addEventListener('click', function (e) {
             e.preventDefault();
-            e.stopPropagation(); // 防止事件冒泡
+            e.stopPropagation(); // 阻止事件冒泡
 
             const dropdown = this.nextElementSibling;
 
-            // 关闭所有其他菜单
-            dropdowns.forEach(d => {
-                if (d !== dropdown) {
-                    d.style.display = 'none';
-                }
-            });
+            // 判断当前点击的是主菜单还是子菜单
+            const isMainMenu = this.parentElement.parentElement.classList.contains('nav-links');
 
-            // 切换当前菜单的显示状态
             if (dropdown && dropdown.classList.contains('dropdown')) {
+
+                // 如果是主菜单，并且展开其他的主菜单项时，关闭所有其他主菜单
+                if (isMainMenu) {
+                    dropdowns.forEach(d => {
+                        if (d !== dropdown && d.parentElement.parentElement.classList.contains('nav-links')) {
+                            d.style.display = 'none';
+                        }
+                    });
+                }
+
+                // 切换当前菜单的显示状态
                 if (dropdown.style.display === 'block') {
                     dropdown.style.display = 'none';
                 } else {
@@ -96,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
 
 
 
