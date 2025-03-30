@@ -7,120 +7,74 @@
     <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
-    <!-- Global Announcement -->
-    <div class="announcement">
-        We rank vendors based on rigorous testing and research, but also take into account your feedback and our commercial agreements with providers. This page contains affiliate links. <a href="#">Advertising Disclosure</a>
-    </div>
-
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
             <img src="/images/LOGO.png" alt="Logo">
         </div>
-<div class="nav-links">
-    <ul>
-        <li>
-            <a href="#" class="menu-toggle">Meal Delivery ▼</a>
-            <ul class="dropdown">
+        <div class="nav-links">
+            <ul>
                 <li>
-                    <a href="#" class="menu-toggle">Reviews ▼</a>
+                    <a href="#" class="menu-toggle">Meal Delivery</a>
                     <ul class="dropdown">
-                        <li><a href="#">FACTOR</a></li>
-                        <li><a href="#">HELLO FRESH</a></li>
-                        <li><a href="#">HOME CHEF</a></li>
+                        <li>
+                            <a href="#" class="menu-toggle">Reviews</a>
+                            <ul class="dropdown">
+                                <li><a href="#">FACTOR</a></li>
+                                <li><a href="#">HELLO FRESH</a></li>
+                                <li><a href="#">HOME CHEF</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-toggle">Best Meal Delivery</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Vegan</a></li>
+                                <li><a href="#">Keto</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#" class="menu-toggle">Best Meal Delivery ▼</a>
+                    <a href="#" class="menu-toggle">Pet Food Delivery</a>
                     <ul class="dropdown">
-                        <li><a href="#">Vegan</a></li>
-                        <li><a href="#">Keto</a></li>
+                        <li>
+                            <a href="#" class="menu-toggle">Best Dog Food Delivery</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Fresh</a></li>
+                                <li><a href="#">Man Made</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="menu-toggle">Pet Food Comparisons</a>
+                            <ul class="dropdown">
+                                <li><a href="#">SA1</a></li>
+                                <li><a href="#">SA2</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
+                <li><a href="#">Blog</a></li>
             </ul>
-        </li>
-        <li>
-            <a href="#" class="menu-toggle">Pet Food Delivery ▼</a>
-            <ul class="dropdown">
-                <li>
-                    <a href="#" class="menu-toggle">Best Dog Food Delivery Per Category ▼</a>
-                    <ul class="dropdown">
-                        <li><a href="#">Fresh</a></li>
-                        <li><a href="#">Man Made</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="menu-toggle">Pet Food Delivery Comparisons ▼</a>
-                    <ul class="dropdown">
-                        <li><a href="#">SA1</a></li>
-                        <li><a href="#">SA2</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li><a href="#">Blog</a></li>
-    </ul>
-</div>
-
+        </div>
     </nav>
 
-    <!-- Main Content Area -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-text">
-                <h1>Welcome to Is MasterClass Worth It?</h1>
-                <p>Your trusted source for honest reviews, comparisons, and guides.</p>
-                <button>Explore More</button>
-            </div>
-            <div class="hero-image">
-                <img src="hero-image.jpg" alt="Hero Image">
-            </div>
-        </section>
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggles = document.querySelectorAll('.menu-toggle');
 
-        <!-- Sections -->
-        <section class="content-block">Meal Delivery</section>
-        <section class="content-block">Pet Food</section>
-        <section class="content-block">Food Advice</section>
-        <section class="content-block">Our Mission</section>
-        <section class="content-block">Review Methodology</section>
-        <section class="content-block">Who We Are</section>
-        <section class="content-block">Our Experts</section>
-    </main>
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Is MasterClass Worth It? All rights reserved.</p>
-            <nav>
-                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact</a>
-            </nav>
-        </div>
-    </footer>
-    // 添加到你的 index.html 中 <body> 底部 或者 单独的 JS 文件中
+                    const dropdown = this.nextElementSibling;
 
-document.addEventListener('DOMContentLoaded', function () {
-    const toggles = document.querySelectorAll('.menu-toggle');
-
-    toggles.forEach(toggle => {
-        toggle.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            // 找到当前点击的父元素的下一个 ul.dropdown
-            const dropdown = this.nextElementSibling;
-
-            if (dropdown && dropdown.classList.contains('dropdown')) {
-                // 如果当前菜单是显示状态，则关闭
-                if (dropdown.style.display === 'block') {
-                    dropdown.style.display = 'none';
-                } else {
-                    // 如果当前菜单是隐藏状态，则显示
-                    dropdown.style.display = 'block';
-                }
-            }
+                    if (dropdown && dropdown.classList.contains('dropdown')) {
+                        dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+                    }
+                });
+            });
         });
-    });
-});
-
+    </script>
 </body>
 </html>
