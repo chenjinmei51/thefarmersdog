@@ -88,12 +88,9 @@ body {
     padding: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     z-index: 10;
+    border-top: 3px solid #ff4d4d; /* 🔥 添加红色线条 */
 }
 
-/* Reviews 被点击时，下拉菜单的顶部边框变为红色 */
-.nav-links li.active-reviews > ul.dropdown {
-    border-top: 3px solid #ff4d4d; /* 红色线 */
-}
 
 /* 链接样式 */
 .nav-links a {
