@@ -46,16 +46,30 @@ body {
     transition: all 0.3s;
 }
 
-/* 下级菜单 */
+/* 下级菜单默认隐藏 */
+.nav-links li > ul.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* 子菜单的定位 */
 .nav-links li ul.dropdown li > ul.dropdown {
+    display: none;
     position: absolute;
     top: 0;
     left: 100%;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(-10px);
-    transition: all 0.3s;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+
 
 
 
