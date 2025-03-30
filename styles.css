@@ -46,10 +46,7 @@ body {
     transition: all 0.3s;
 }
 
-/* 鼠标移动到主菜单项时，显示下拉菜单 */
-.nav-links li:hover > ul.dropdown {
-    display: block;
-}
+
 
 
 /* 下级菜单 */
@@ -63,12 +60,7 @@ body {
     transition: all 0.3s;
 }
 
-/* 鼠标移动到次级菜单项时，显示下一个下拉菜单 */
-.nav-links li ul.dropdown li:hover > ul.dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-}
+
 
 /* 链接样式 */
 .nav-links a {
@@ -83,6 +75,8 @@ body {
     margin-left: 5px;
 }
 
+
+
 /* 下拉菜单的样式 */
 .nav-links li ul.dropdown a {
     display: block;
@@ -94,6 +88,9 @@ body {
 .nav-links li ul.dropdown a:hover {
     background-color: #f0f4f8;
 }
+
+
+
 
 
 
