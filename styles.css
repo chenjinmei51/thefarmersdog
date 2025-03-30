@@ -24,9 +24,12 @@ body {
 }
 
 .nav-links ul {
+    display: flex;
+    gap: 20px;
     list-style: none;
     padding: 0;
 }
+
 
 .nav-links li {
     position: relative;
@@ -63,12 +66,16 @@ body {
 
 
 
-/* 下拉菜单的样式 */
-.nav-links li ul.dropdown a {
-    display: block;
-    padding: 8px 12px;
-    color: #2c3e50;
-    text-decoration: none;
+/* 下拉菜单 */
+.nav-links li ul.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .nav-links li ul.dropdown a:hover {
