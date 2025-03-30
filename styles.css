@@ -62,8 +62,7 @@ body {
 .nav-links li > ul.dropdown {
     display: none;
     position: relative; /* 改为 relative，让下拉菜单影响布局 */
-    top: 100%;
-    left: 0;
+   
     background-color: white;
     border: 1px solid #ddd;
     padding: 10px;
