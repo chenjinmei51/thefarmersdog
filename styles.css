@@ -71,20 +71,19 @@ body {
     display: block;
 }
 
-/* 仅为 menu-toggle 添加三角符号 */
-.nav-links li > a.menu-toggle::after {
+/* 仅为主菜单项和次级菜单项添加三角符号 */
+.nav-links > ul > li > a.menu-toggle::after, 
+.nav-links li ul.dropdown li > a.menu-toggle::after {
     content: ' ▼';
     font-size: 12px;
 }
 
-/* 不显示三角符号的普通链接 */
-.nav-links li ul.dropdown a {
-    position: relative;
+/* 普通链接不显示三角符号 */
+.nav-links li ul.dropdown a:not(.menu-toggle)::after {
+    content: '';
 }
 
-.nav-links li ul.dropdown a::after {
-    content: ''; /* 清除三角符号 */
-}
+
 
 /* 按钮样式 */
 .cta-button {
