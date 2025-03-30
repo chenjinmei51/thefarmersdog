@@ -91,12 +91,18 @@ body {
     display: block;
 }
 
+/* 调整小角号的样式，使其在同一行对齐 */
+.nav-links li > a.menu-toggle {
+    display: flex; /* 确保标题和小角号在同一行排列 */
+    align-items: center; /* 垂直居中对齐 */
+}
+
 /* 更美观的三角符号 (使用 SVG 图标) */
 .nav-links li > a.menu-toggle::after {
     content: url('data:image/svg+xml,%3Csvg width="10" height="10" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0 L5 5 L10 0" fill="none" stroke="%232c3e50" stroke-width="2"/%3E%3C/svg%3E');
     margin-left: 5px;
     display: inline-block;
-    vertical-align: middle;
+   
 }
 
 /* 普通链接不显示三角符号 */
