@@ -89,6 +89,8 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     z-index: 10;
     border-top: 3px solid #ff4d4d; /* 🔥 添加红色线条 */
+        border-left: none; /* 去掉左边的线条 */
+    border-right: none; /* 去掉右边的线条 */
 }
 
 
