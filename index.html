@@ -12,50 +12,50 @@
         <div class="logo">
             <img src="/images/LOGO.png" alt="Logo">
         </div>
-        <div class="nav-links">
-            <ul>
-                <li>
-                    <a href="#" class="menu-toggle">Meal Delivery</a>
-                    <ul class="dropdown">
-                        <li>
-                            <a href="#" class="menu-toggle">Reviews</a>
-                            <ul class="dropdown">
-                                <li><a href="#">FACTOR</a></li>
-                                <li><a href="#">HELLO FRESH</a></li>
-                                <li><a href="#">HOME CHEF</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="menu-toggle">Best Meal Delivery</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Vegan</a></li>
-                                <li><a href="#">Keto</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="menu-toggle">Pet Food Delivery</a>
-                    <ul class="dropdown">
-                        <li>
-                            <a href="#" class="menu-toggle">Best Dog Food Delivery</a>
-                            <ul class="dropdown">
-                                <li><a href="#">Fresh</a></li>
-                                <li><a href="#">Man Made</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="menu-toggle">Pet Food Comparisons</a>
-                            <ul class="dropdown">
-                                <li><a href="#">SA1</a></li>
-                                <li><a href="#">SA2</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="#">Blog</a></li>
-            </ul>
-        </div>
+ <div class="nav-links">
+        <ul>
+            <li>
+                <a href="#" class="menu-toggle">Meal Delivery</a>
+                <ul class="dropdown">
+                    <li>
+                        <a href="#" class="menu-toggle">Reviews</a>
+                        <ul class="dropdown">
+                            <li><a href="#">FACTOR</a></li>
+                            <li><a href="#">HELLO FRESH</a></li>
+                            <li><a href="#">HOME CHEF</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-toggle">Best Meal Delivery</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Vegan</a></li>
+                            <li><a href="#">Keto</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="menu-toggle">Pet Food Delivery</a>
+                <ul class="dropdown">
+                    <li>
+                        <a href="#" class="menu-toggle">Dog Food</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Fresh</a></li>
+                            <li><a href="#">Man Made</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-toggle">Pet Food Comparisons</a>
+                        <ul class="dropdown">
+                            <li><a href="#">SA1</a></li>
+                            <li><a href="#">SA2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+    </div>
     </nav>
 
     <!-- JavaScript -->
@@ -70,37 +70,33 @@ document.addEventListener('DOMContentLoaded', function () {
             e.stopPropagation(); // 防止事件冒泡
 
             const dropdown = this.nextElementSibling;
-
-            // 如果点击的是主菜单项
             const isMainMenu = this.closest('.nav-links > ul > li');
 
             if (dropdown && dropdown.classList.contains('dropdown')) {
-                // 如果点击的是主菜单项，自动关闭其他主菜单项
+                
                 if (isMainMenu) {
+                    // 关闭其他主菜单的下拉
                     dropdowns.forEach(d => {
-                        if (d !== dropdown && d.parentElement.closest('.nav-links > ul > li')) {
+                        if (d !== dropdown && d.closest('.nav-links > ul > li') && !d.closest('li').contains(this)) {
                             d.style.display = 'none';
                         }
                     });
                 }
 
-                // 切换当前菜单显示状态
-                if (dropdown.style.display === 'block') {
-                    dropdown.style.display = 'none';
-                } else {
-                    dropdown.style.display = 'block';
-                }
+                // 切换当前菜单的显示状态
+                dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
             }
         });
     });
 
-    // 点击页面的其他地方时，关闭所有菜单
+    // 点击页面其他地方时关闭所有菜单
     document.addEventListener('click', function (e) {
         dropdowns.forEach(d => {
             d.style.display = 'none';
         });
     });
 });
+
 
 
 
