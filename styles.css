@@ -74,7 +74,8 @@ body {
 /* 子菜单（用于二级菜单） */
 .nav-links li ul.dropdown li > ul.dropdown {
     display: none;
-    position: absolute;
+    position: relative; /* ✅ 改为 relative，使其影响布局 */
+    margin-top: 5px; /* 给展开的菜单与上方菜单一些间距 */
     top: 100%;
     left: 0;
     background-color: white;
