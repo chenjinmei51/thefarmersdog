@@ -60,7 +60,7 @@
 
     <!-- JavaScript -->
     <script>
-   document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     const toggles = document.querySelectorAll('.menu-toggle');
     const dropdowns = document.querySelectorAll('.dropdown');
 
@@ -71,8 +71,15 @@
 
             const dropdown = this.nextElementSibling;
 
+            // 关闭所有其他菜单
+            dropdowns.forEach(d => {
+                if (d !== dropdown) {
+                    d.style.display = 'none';
+                }
+            });
+
+            // 切换当前菜单的显示状态
             if (dropdown && dropdown.classList.contains('dropdown')) {
-                // 切换当前菜单的显示状态
                 if (dropdown.style.display === 'block') {
                     dropdown.style.display = 'none';
                 } else {
