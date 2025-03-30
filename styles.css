@@ -33,6 +33,11 @@ body {
     margin: 0;
 }
 
+.nav-links > ul > li {
+    white-space: nowrap; /* 禁止自动换行 */
+}
+
+
 /* 主菜单项 */
 .nav-links > ul > li {
     position: relative;
