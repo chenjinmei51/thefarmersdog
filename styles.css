@@ -58,11 +58,12 @@ body {
 
 
 
-/* 下拉菜单 */
+/* 主菜单下拉项（例如：Meal Delivery） */
 .nav-links li > ul.dropdown {
     display: none;
-    position: relative; /* 改为 relative，让下拉菜单影响布局 */
-   
+    position: absolute; /* 确保子菜单浮动在导航栏上方，而不是挤压导航栏 */
+    top: 100%; /* 放在主菜单的正下方 */
+    left: 0;
     background-color: white;
     border: 1px solid #ddd;
     padding: 10px;
@@ -70,13 +71,12 @@ body {
     z-index: 10;
 }
 
-/* 子菜单（用于二级菜单） */
+/* 子菜单（例如：Reviews 下的内容） */
 .nav-links li ul.dropdown li > ul.dropdown {
     display: none;
-    position: relative; /* ✅ 改为 relative，使其影响布局 */
-    margin-top: 5px; /* 给展开的菜单与上方菜单一些间距 */
-    top: 100%;
-    left: 0;
+    position: absolute; /* 保持绝对定位 */
+    top: 0; /* 从父级菜单的左侧开始 */
+    left: 100%; /* 与父菜单项的右侧对齐 */
     background-color: white;
     border: 1px solid #ddd;
     padding: 10px;
