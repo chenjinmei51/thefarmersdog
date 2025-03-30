@@ -38,8 +38,10 @@ body {
     position: relative;
 }
 
-/* 添加分隔线 */
-.nav-links li:not(:last-child)::after {
+
+
+/* 添加主菜单之间的分隔线 */
+.nav-links > ul > li:not(:last-child)::after {
     content: '';
     display: block;
     width: 1px;
