@@ -71,12 +71,11 @@ body {
     z-index: 10;
 }
 
-/* Meal Delivery 被点击时，下拉菜单的顶部边框变为蓝色 */
-.nav-links li.active-meal-delivery > ul.dropdown {
+
+/* 所有一级菜单点击时的蓝色底线效果 */
+.nav-links li.active-menu > ul.dropdown {
     border-top: 3px solid #3498db; /* 蓝色线 */
 }
-
-
 
 
 /* Reviews 下的子菜单（要在 Reviews 下方展开，推动 Best Meal Delivery） */
