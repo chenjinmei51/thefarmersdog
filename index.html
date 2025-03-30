@@ -60,21 +60,43 @@
 
     <!-- JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const toggles = document.querySelectorAll('.menu-toggle');
+     document.addEventListener('DOMContentLoaded', function () {
+    const toggles = document.querySelectorAll('.menu-toggle');
+    const dropdowns = document.querySelectorAll('.dropdown');
 
-            toggles.forEach(toggle => {
-                toggle.addEventListener('click', function (e) {
-                    e.preventDefault();
+    toggles.forEach(toggle => {
+        toggle.addEventListener('click', function (e) {
+            e.preventDefault();
 
-                    const dropdown = this.nextElementSibling;
-
-                    if (dropdown && dropdown.classList.contains('dropdown')) {
-                        dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
-                    }
-                });
+            // 关闭所有其他菜单
+            dropdowns.forEach(dropdown => {
+                if (dropdown !== this.nextElementSibling) {
+                    dropdown.style.display = 'none';
+                }
             });
+
+            // 找到当前点击的父元素的下一个 ul.dropdown
+            const dropdown = this.nextElementSibling;
+
+            if (dropdown && dropdown.classList.contains('dropdown')) {
+                // 切换显示状态
+                dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+            }
         });
+    });
+
+    // 点击页面的其他地方时关闭所有菜单
+    document.addEventListener('click', function (e) {
+        const isClickInside = e.target.closest('.nav-links');
+        
+        if (!isClickInside) { // 如果点击在导航菜单外部
+            dropdowns.forEach(dropdown => {
+                dropdown.style.display = 'none';
+            });
+        }
+    });
+});
+
     </script>
 </body>
 </html>
