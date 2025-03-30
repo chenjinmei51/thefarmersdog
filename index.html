@@ -97,5 +97,30 @@
             </nav>
         </div>
     </footer>
+    // 添加到你的 index.html 中 <body> 底部 或者 单独的 JS 文件中
+
+document.addEventListener('DOMContentLoaded', function () {
+    const toggles = document.querySelectorAll('.menu-toggle');
+
+    toggles.forEach(toggle => {
+        toggle.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // 找到当前点击的父元素的下一个 ul.dropdown
+            const dropdown = this.nextElementSibling;
+
+            if (dropdown && dropdown.classList.contains('dropdown')) {
+                // 如果当前菜单是显示状态，则关闭
+                if (dropdown.style.display === 'block') {
+                    dropdown.style.display = 'none';
+                } else {
+                    // 如果当前菜单是隐藏状态，则显示
+                    dropdown.style.display = 'block';
+                }
+            }
+        });
+    });
+});
+
 </body>
 </html>
