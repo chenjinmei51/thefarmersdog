@@ -71,8 +71,7 @@
     </nav>
 
     <!-- JavaScript -->
-    <script>
-
+ <script>
 document.addEventListener('DOMContentLoaded', function () {
     const toggles = document.querySelectorAll('.menu-toggle');
     const dropdowns = document.querySelectorAll('.dropdown');
@@ -84,33 +83,46 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const dropdown = this.nextElementSibling;
             const isMainMenu = this.closest('.nav-links > ul > li');
+            const menuName = this.innerText.trim(); // 获取菜单名称 (Meal Delivery 或 Reviews)
 
             if (dropdown && dropdown.classList.contains('dropdown')) {
                 
                 if (isMainMenu) {
-                    // 关闭其他主菜单的下拉
+                    // 关闭其他主菜单的下拉，并移除颜色状态类
                     dropdowns.forEach(d => {
                         if (d !== dropdown && d.closest('.nav-links > ul > li') && !d.closest('li').contains(this)) {
                             d.style.display = 'none';
+                            d.parentElement.classList.remove('active-meal-delivery', 'active-reviews');
                         }
                     });
                 }
 
                 // 切换当前菜单的显示状态
                 dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+
+                // 添加或移除激活状态类
+                if (dropdown.style.display === 'block') {
+                    if (menuName === 'Meal Delivery') {
+                        this.parentElement.classList.add('active-meal-delivery');
+                    } else if (menuName === 'Reviews') {
+                        this.parentElement.classList.add('active-reviews');
+                    }
+                } else {
+                    this.parentElement.classList.remove('active-meal-delivery', 'active-reviews');
+                }
             }
         });
     });
 
-    // 点击页面其他地方时关闭所有菜单
+    // 点击页面其他地方时关闭所有菜单，并移除激活状态
     document.addEventListener('click', function (e) {
         dropdowns.forEach(d => {
             d.style.display = 'none';
+            d.parentElement.classList.remove('active-meal-delivery', 'active-reviews');
         });
     });
 });
+</script>
 
-
-    </script>
 </body>
 </html>
