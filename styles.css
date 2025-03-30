@@ -34,21 +34,23 @@ body {
 }
 
 /* 主菜单项 */
-.nav-links li {
+.nav-links > ul > li {
     position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* 添加主菜单项之间的分隔线 */
+.nav-links > ul > li:not(:last-child) {
+    border-right: 1px solid #ddd; /* 添加垂直分隔线 */
+    padding-right: 20px;
+    margin-right: 20px;
 }
 
 
 
-/* 添加主菜单之间的分隔线 */
-.nav-links > ul > li:not(:last-child)::after {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 20px;
-    background-color: #ddd;
-    margin-left: 20px;
-}
+
+
 
 /* 下拉菜单 */
 .nav-links li > ul.dropdown {
