@@ -1,3 +1,4 @@
+/* 全局样式 */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -24,50 +25,20 @@ body {
 }
 
 .nav-links ul {
-    display: flex;
+    display: flex; /* 确保菜单是横向排列的 */
     gap: 20px;
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-
+/* 主菜单项 */
 .nav-links li {
     position: relative;
 }
 
-/* 所有下拉菜单默认隐藏 */
-.nav-links li > ul.dropdown {
-    display: none; /* 修复：使用 display 控制 */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: all 0.3s;
-}
-
-
-
-
-/* 链接样式 */
-.nav-links a {
-    text-decoration: none;
-    color: #2c3e50;
-    padding: 8px 12px;
-}
-
-.nav-links li > a::after {
-    content: '▼';
-    font-size: 12px;
-    margin-left: 5px;
-}
-
-
-
 /* 下拉菜单 */
-.nav-links li ul.dropdown {
+.nav-links li > ul.dropdown {
     display: none;
     position: absolute;
     top: 100%;
@@ -76,43 +47,37 @@ body {
     border: 1px solid #ddd;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 10;
 }
 
-.nav-links li ul.dropdown a:hover {
-    background-color: #f0f4f8;
-}
-
-
-
-
-
-
-.hero {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-    background-image: url('hero-background.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-overlay {
+/* 子菜单（用于二级菜单） */
+.nav-links li ul.dropdown li > ul.dropdown {
+    display: none;
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    left: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 10;
 }
 
-.hero-content {
-    position: relative;
-    text-align: center;
-    color: white;
+/* 链接样式 */
+.nav-links a {
+    text-decoration: none;
+    color: #2c3e50;
+    padding: 8px 12px;
+    display: block;
 }
 
+/* 添加下拉符号 */
+.nav-links li > a::after {
+    content: ' ▼';
+    font-size: 12px;
+}
+
+/* 按钮样式 */
 .cta-button {
     padding: 10px 20px;
     background-color: #3498db;
@@ -127,6 +92,7 @@ body {
     background-color: #2980b9;
 }
 
+/* 内容块的样式 */
 .content-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -148,6 +114,7 @@ body {
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+/* 页脚样式 */
 footer {
     padding: 20px;
     background-color: #343a40;
