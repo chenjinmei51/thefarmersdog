@@ -74,8 +74,8 @@ body {
 .nav-links li ul.dropdown li > ul.dropdown {
     display: none;
     position: absolute;
-    top: 0;
-    left: 100%;
+    top: 100%;
+    left: 0;
     background-color: white;
     border: 1px solid #ddd;
     padding: 10px;
