@@ -25,8 +25,7 @@ body {
 
 .nav-links ul {
     list-style: none;
-    display: flex;
-    gap: 20px;
+    padding: 0;
 }
 
 .nav-links li {
@@ -45,33 +44,6 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     transition: all 0.3s;
 }
-
-/* 下级菜单默认隐藏 */
-.nav-links li > ul.dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-/* 子菜单的定位 */
-.nav-links li ul.dropdown li > ul.dropdown {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-
-
 
 
 
