@@ -94,7 +94,7 @@ body {
 /* 调整小角号的样式，使其在同一行对齐 */
 .nav-links li > a.menu-toggle {
     display: flex; /* 确保标题和小角号在同一行排列 */
-    align-items: center; /* 垂直居中对齐 */
+    align-items: right; /* 垂直居中对齐 */
      gap: 5px; /* 添加一些间距 */
 }
 
