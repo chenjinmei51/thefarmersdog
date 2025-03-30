@@ -87,15 +87,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (dropdown && dropdown.classList.contains('dropdown')) {
                 
-               if (isMainMenu) {
-    // 关闭其他主菜单的下拉，只关闭同一级的菜单
-    dropdowns.forEach(d => {
-        if (d !== dropdown && d.closest('.nav-links > ul > li') === isMainMenu) {
-            d.style.display = 'none';
-        }
-    });
-}
-
+                if (isMainMenu) {
+                    // 关闭其他主菜单的下拉
+                    dropdowns.forEach(d => {
+                        if (d !== dropdown && d.closest('.nav-links > ul > li') && !d.closest('li').contains(this)) {
+                            d.style.display = 'none';
+                        }
+                    });
+                }
 
                 // 切换当前菜单的显示状态
                 dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
