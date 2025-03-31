@@ -182,15 +182,10 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     margin-bottom: 20px;
+     justify-content: space-between;
 }
 
-/* 图片样式（自动缩放与对齐） */
-.tab-card img {
-    width: 40%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px 0 0 10px;
-}
+
 
 /* 内容区域样式 */
 .tab-card-content {
@@ -221,6 +216,31 @@ body {
 
 .learn-more:hover {
     color: #c0392b;
+}
+
+/* 图片区域样式 */
+.tab-image-wrapper {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 调整图片的宽度与大小 */
+.tab-image-wrapper img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0 10px 0 0;
+}
+
+/* 图片下方文字说明样式 */
+.image-caption {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    padding: 0 10px;
 }
 
 /* Category Block Container */
