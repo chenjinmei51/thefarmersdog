@@ -123,74 +123,104 @@ body {
     content: '';
 }
 
-/* Hero 区块的整体样式 */
-.hero {
-    position: relative;
-    height: 80vh; /* 占据屏幕的 80% 高度 */
-    background-image: url('your-background-image.jpg'); /* 替换为你的背景图片路径 */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Hero 区块样式 */
+.hero-section {
+    background-color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
 }
 
-/* Hero 内容的样式 */
-.hero-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.6); /* 半透明黑色背景提高可读性 */
-    padding: 30px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 1200px;
-}
-
-/* 文字内容样式 */
-.text-content {
-    color: white;
-    max-width: 600px;
-}
-
-/* Hero 标题样式 */
-.text-content h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-/* Hero 描述文字样式 */
-.text-content p {
-    font-size: 1.2rem;
+.hero-container h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
     margin-bottom: 20px;
 }
 
-/* 按钮样式 */
-.cta-button {
+/* Tab 导航样式 */
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-button {
     padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
+    margin: 0 10px;
     border: none;
-    border-radius: 5px;
+    background-color: #e0e0e0;
     cursor: pointer;
     transition: background-color 0.3s;
-    text-decoration: none;
+    border-radius: 5px;
 }
 
-.cta-button:hover {
-    background-color: #2980b9;
+.tab-button.active {
+    background-color: #3498db;
+    color: white;
 }
 
-/* 图片内容样式 */
-.image-content {
-    margin-left: 30px;
+/* Tab 内容区域样式 */
+.tab-content-container {
+    padding: 40px 20px;
+    background-color: white;
 }
 
-.hero-image {
-    width: 300px; /* 控制图片的宽度 */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* 卡片样式 */
+.tab-card {
+    display: flex;
+    gap: 20px;
+    background: white;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
 }
 
+/* 图片样式（自动缩放与对齐） */
+.tab-card img {
+    width: 300px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+
+/* 内容区域样式 */
+.tab-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tab-card-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.tab-card-content p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.learn-more {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.learn-more:hover {
+    color: #c0392b;
+}
 
 /* Category Block Container */
 .category-block {
