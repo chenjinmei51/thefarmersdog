@@ -73,13 +73,37 @@
 
 
 <main>
-<!-- HERO 区块 -->
-<section class="hero-section">
+<!-- Hero 大标题 (保持 h1，因为是整个页面的主标题) -->
+<section class="hero-header">
     <h1>Discover & Compare Top-Rated Delivery Services</h1>
-    <div class="hero-content">
-        <p>Your guide to the best meal delivery services for 2025.</p>
-    </div>
 </section>
+
+<!-- Tab 导航 -->
+<div class="tab-nav">
+    <button class="tab-button active" data-tab="meal-delivery">Meal Delivery</button>
+    <button class="tab-button" data-tab="pet-food-delivery">Pet Food Delivery</button>
+    <button class="tab-button" data-tab="food-advice">Food Advice</button>
+</div>
+
+<!-- Tab 内容区域 -->
+<div class="tab-content active" id="meal-delivery">
+    <h2>Find the Best Meal Delivery Service</h2>
+    <p>Explore various meal delivery services that suit your dietary needs.</p>
+    <img src="meal-delivery.jpg" alt="Meal Delivery Image">
+</div>
+
+<div class="tab-content" id="pet-food-delivery">
+    <h2>Find the Best Pet Food Delivery Service</h2>
+    <p>Discover top pet food services for your furry friends.</p>
+    <img src="pet-food-delivery.jpg" alt="Pet Food Delivery Image">
+</div>
+
+<div class="tab-content" id="food-advice">
+    <h2>Get Expert Food Advice</h2>
+    <p>Read expert tips and guides on healthy eating and nutrition.</p>
+    <img src="food-advice.jpg" alt="Food Advice Image">
+</div>
+
 
 <!-- Category Block (Meal Delivery) -->
 <section class="category-block">
