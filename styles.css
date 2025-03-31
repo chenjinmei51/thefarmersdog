@@ -186,8 +186,8 @@ body {
 
 /* 图片样式（自动缩放与对齐） */
 .tab-card img {
-    width: 300px;
-    height: 180px;
+    width: 400px;
+    height: 250px;
     object-fit: cover;
     border-radius: 10px 0 0 10px;
 }
