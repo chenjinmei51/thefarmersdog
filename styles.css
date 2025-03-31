@@ -186,8 +186,8 @@ body {
 
 /* 图片样式（自动缩放与对齐） */
 .tab-card img {
-    width: 400px;
-    height: 250px;
+    width: 40%;
+    height: 300px;
     object-fit: cover;
     border-radius: 10px 0 0 10px;
 }
@@ -198,6 +198,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 60%; /* ✅ 设置为 60% 更加合理 */
 }
 
 .tab-card-content h2 {
