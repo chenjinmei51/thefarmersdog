@@ -73,36 +73,58 @@
 
 
 <main>
-<!-- Hero 大标题 (保持 h1，因为是整个页面的主标题) -->
-<section class="hero-header">
-    <h1>Discover & Compare Top-Rated Delivery Services</h1>
+<!-- HERO 区块 -->
+<section class="hero-section">
+    <div class="hero-container">
+        <h1>Discover & Compare Top-Rated Delivery Services</h1>
+        <!-- Tab 导航 -->
+        <div class="tab-nav">
+            <button class="tab-button active" data-tab="meal-delivery">Meal Delivery</button>
+            <button class="tab-button" data-tab="pet-food-delivery">Pet Food Delivery</button>
+            <button class="tab-button" data-tab="food-advice">Food Advice</button>
+        </div>
+    </div>
 </section>
 
-<!-- Tab 导航 -->
-<div class="tab-nav">
-    <button class="tab-button active" data-tab="meal-delivery">Meal Delivery</button>
-    <button class="tab-button" data-tab="pet-food-delivery">Pet Food Delivery</button>
-    <button class="tab-button" data-tab="food-advice">Food Advice</button>
-</div>
-
 <!-- Tab 内容区域 -->
-<div class="tab-content active" id="meal-delivery">
-    <h2>Find the Best Meal Delivery Service</h2>
-    <p>Explore various meal delivery services that suit your dietary needs.</p>
-    <img src="meal-delivery.jpg" alt="Meal Delivery Image">
-</div>
+<section class="tab-content-container">
+    <!-- Meal Delivery 内容区域 -->
+    <div class="tab-content active" id="meal-delivery">
+        <div class="tab-card">
+            <img src="meal-delivery.jpg" alt="Meal Delivery Image">
+            <div class="tab-card-content">
+                <h2>Find the Best Meal Delivery Service</h2>
+                <p>Explore various meal delivery services that suit your dietary needs.</p>
+                <a href="#" class="learn-more">Learn More &rarr;</a>
+            </div>
+        </div>
+    </div>
 
-<div class="tab-content" id="pet-food-delivery">
-    <h2>Find the Best Pet Food Delivery Service</h2>
-    <p>Discover top pet food services for your furry friends.</p>
-    <img src="pet-food-delivery.jpg" alt="Pet Food Delivery Image">
-</div>
+    <!-- Pet Food Delivery 内容区域 -->
+    <div class="tab-content" id="pet-food-delivery">
+        <div class="tab-card">
+            <img src="pet-food-delivery.jpg" alt="Pet Food Delivery Image">
+            <div class="tab-card-content">
+                <h2>Find the Best Pet Food Delivery Service</h2>
+                <p>Discover top pet food services for your furry friends.</p>
+                <a href="#" class="learn-more">Learn More &rarr;</a>
+            </div>
+        </div>
+    </div>
 
-<div class="tab-content" id="food-advice">
-    <h2>Get Expert Food Advice</h2>
-    <p>Read expert tips and guides on healthy eating and nutrition.</p>
-    <img src="food-advice.jpg" alt="Food Advice Image">
-</div>
+    <!-- Food Advice 内容区域 -->
+    <div class="tab-content" id="food-advice">
+        <div class="tab-card">
+            <img src="food-advice.jpg" alt="Food Advice Image">
+            <div class="tab-card-content">
+                <h2>Get Expert Food Advice</h2>
+                <p>Read expert tips and guides on healthy eating and nutrition.</p>
+                <a href="#" class="learn-more">Learn More &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 
 <!-- Category Block (Meal Delivery) -->
