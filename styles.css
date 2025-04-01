@@ -7,12 +7,30 @@ body {
     background-color: #f0f4f8;
 }
 
-.announcement {
-    background-color: #eaf2f8;
-    padding: 10px;
+/* 广告声明的样式 */
+.advertising-disclosure {
+    background-color: #f0ad4e; /* 背景色为橙色，可以根据需要调整 */
+    color: white;
+    padding: 10px 20px;
     text-align: center;
-    font-size: 14px;
+    font-size: 0.9rem;
+    position: sticky; /* 保持在顶部 */
+    top: 0;
+    z-index: 1000;
 }
+
+/* 广告声明中的链接样式 */
+.advertising-disclosure .disclosure-link {
+    color: white;
+    text-decoration: underline;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.advertising-disclosure .disclosure-link:hover {
+    text-decoration: none;
+}
+
 
 /* 导航栏样式 */
 .navbar {
