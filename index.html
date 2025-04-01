@@ -203,6 +203,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const toggles = document.querySelectorAll('.menu-toggle');
     const dropdowns = document.querySelectorAll('.dropdown');
+    const navLinks = document.querySelectorAll('.nav-links > ul > li > a.menu-toggle'); // 🔥 获取所有一级菜单链接
 
     toggles.forEach(toggle => {
         toggle.addEventListener('click', function (e) {
@@ -211,34 +212,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const dropdown = this.nextElementSibling;
             const isMainMenu = this.closest('.nav-links > ul > li');
-            const menuName = this.innerText.trim(); // 获取菜单名称
+            const menuName = this.innerText.trim();
 
             if (dropdown && dropdown.classList.contains('dropdown')) {
                 
                 if (isMainMenu) {
-                    // 关闭其他主菜单的下拉，并移除颜色状态类
+                    // 🔥 关闭其他下拉菜单并移除颜色状态类
                     dropdowns.forEach(d => {
                         if (d !== dropdown && d.closest('.nav-links > ul > li') && !d.closest('li').contains(this)) {
                             d.style.display = 'none';
-                            d.parentElement.classList.remove('active-menu'); // 移除所有激活状态
+                            d.parentElement.classList.remove('active-menu');
                         }
                     });
                 }
 
-                // 切换当前菜单的显示状态
+                // 🔥 切换当前菜单的显示状态
                 dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
 
-                // 添加或移除激活状态类
+                // 🔥 添加或移除激活状态类
                 if (dropdown.style.display === 'block') {
                     this.parentElement.classList.add('active-menu');
                 } else {
                     this.parentElement.classList.remove('active-menu');
                 }
             }
+
+            // 🔥 移除所有菜单项的 active-menu 类，保持唯一
+            navLinks.forEach(link => {
+                if (link !== this) {
+                    link.parentElement.classList.remove('active-menu');
+                }
+            });
+
+            // 🔥 将当前点击的菜单项设置为激活状态
+            this.parentElement.classList.add('active-menu');
         });
     });
 
-    // 点击页面其他地方时关闭所有菜单，并移除激活状态
+    // 🔥 点击页面其他地方时关闭所有菜单，并移除激活状态
     document.addEventListener('click', function (e) {
         dropdowns.forEach(d => {
             d.style.display = 'none';
