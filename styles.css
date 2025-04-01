@@ -95,7 +95,7 @@ body {
 
 /* 所有一级菜单点击时的蓝色底线效果 */
 .nav-links li.active-menu > ul.dropdown {
-    border-top: -3px solid #3498db; /* 蓝色线 */
+    border-top: 3px solid #3498db; /* 蓝色线 */
 }
 
 
