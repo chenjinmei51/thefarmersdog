@@ -7,6 +7,13 @@ body {
     background-color: #f0f4f8;
 }
 
+/* 通用容器类，确保对齐效果一致 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* 居中对齐 */
+    padding: 0 20px; /* 确保与导航栏对齐 */
+}
+
 /* 广告声明的样式 */
 .advertising-disclosure {
     background-color: white; /* ✅ 背景色为白色 */
@@ -37,7 +44,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1px 120px;
+    padding: 1px 20px;
     background-color: white;
     border-bottom: 3px solid #e0e0e0; /* 更粗的底线 */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加阴影 */
@@ -49,6 +56,7 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
+    margin-left: auto; /* 将菜单推到最右边 */
 }
 
 .nav-links > ul > li {
@@ -404,4 +412,33 @@ footer nav a {
 
 footer nav a:hover {
     color: white;
+}
+
+
+/* 响应式布局 - 平板或更小 */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1px 15px; /* 减少内边距适应小屏幕 */
+    }
+
+    .nav-links ul {
+        flex-direction: column; /* 垂直排列菜单 */
+        margin-left: 0;
+    }
+}
+
+/* 响应式布局 - 手机 */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 1px 10px;
+    }
+
+    .nav-links ul {
+        gap: 10px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
 }
