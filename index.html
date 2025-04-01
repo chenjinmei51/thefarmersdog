@@ -276,6 +276,17 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const bars = document.querySelectorAll('.bar');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active'); // 显示或隐藏菜单
+            bars.forEach(bar => bar.classList.toggle('change')); // 汉堡菜单动画
+        });
+    });
 </script>
 </body>
 </html>
