@@ -7,12 +7,6 @@ body {
     background-color: #f0f4f8;
 }
 
-/* 通用容器类，确保对齐效果一致 */
-.container {
-    max-width: 1200px;
-    margin: 0 auto; /* 居中对齐 */
-    padding: 0 20px; /* 确保与导航栏对齐 */
-}
 
 /* 广告声明的样式 */
 .advertising-disclosure {
