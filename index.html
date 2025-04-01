@@ -14,6 +14,7 @@
 
     <!-- Navbar -->
     <nav class="navbar">
+        <div class="container">
         <div class="logo">
             <img src="/images/LOGO.png" alt="Logo">
         </div>
@@ -79,6 +80,7 @@
             <li><a href="#">Blog</a></li>
         </ul>
     </div>
+      </div>      
     </nav>
 
 
@@ -207,86 +209,62 @@
     <!-- JavaScript -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+    // 1. 汉堡菜单功能
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const bars = document.querySelectorAll('.bar');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        bars.forEach(bar => bar.classList.toggle('change'));
+    });
+
+    // 2. 标签切换功能
+    const buttons = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const tab = button.getAttribute('data-tab');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            contents.forEach(content => {
+                if (content.id === tab) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+            });
+        });
+    });
+
+    // 3. 多级菜单展开与关闭功能
     const toggles = document.querySelectorAll('.menu-toggle');
     const dropdowns = document.querySelectorAll('.dropdown');
 
     toggles.forEach(toggle => {
         toggle.addEventListener('click', function (e) {
             e.preventDefault();
-            e.stopPropagation(); // 防止事件冒泡
+            e.stopPropagation();
 
             const dropdown = this.nextElementSibling;
-            const isMainMenu = this.closest('.nav-links > ul > li');
-            const menuName = this.innerText.trim(); // 获取菜单名称
 
             if (dropdown && dropdown.classList.contains('dropdown')) {
-                
-                if (isMainMenu) {
-                    // 关闭其他主菜单的下拉，并移除颜色状态类
-                    dropdowns.forEach(d => {
-                        if (d !== dropdown && d.closest('.nav-links > ul > li') && !d.closest('li').contains(this)) {
-                            d.style.display = 'none';
-                            d.parentElement.classList.remove('active-menu'); // 移除所有激活状态
-                        }
-                    });
-                }
-
-                // 切换当前菜单的显示状态
                 dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
-
-                // 添加或移除激活状态类
-                if (dropdown.style.display === 'block') {
-                    this.parentElement.classList.add('active-menu');
-                } else {
-                    this.parentElement.classList.remove('active-menu');
-                }
             }
         });
     });
 
-    // 点击页面其他地方时关闭所有菜单，并移除激活状态
-    document.addEventListener('click', function (e) {
+    document.addEventListener('click', function () {
         dropdowns.forEach(d => {
             d.style.display = 'none';
-            d.parentElement.classList.remove('active-menu');
         });
     });
 });
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const buttons = document.querySelectorAll('.tab-button');
-        const contents = document.querySelectorAll('.tab-content');
-
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                const tab = button.getAttribute('data-tab');
-
-                // 切换按钮样式
-                buttons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                // 切换内容显示
-                contents.forEach(content => {
-                    if (content.id === tab) {
-                        content.classList.add('active');
-                    } else {
-                        content.classList.remove('active');
-                    }
-                });
-            });
-        });
-    });
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        const bars = document.querySelectorAll('.bar');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active'); // 显示或隐藏菜单
-            bars.forEach(bar => bar.classList.toggle('change')); // 汉堡菜单动画
-        });
-    });
+    
 </script>
 </body>
 </html>
