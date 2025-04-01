@@ -454,25 +454,7 @@ footer nav a:hover {
         gap: 10px;
     }
 
-    <!-- Navbar -->
-<nav class="navbar container">
-    <div class="logo">
-        <img src="/images/LOGO.png" alt="Logo">
-    </div>
-    <div class="hamburger">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
-    <div class="nav-links">
-        <ul>
-            <li><a href="#" class="menu-toggle">another one</a></li>
-            <li><a href="#" class="menu-toggle">Meal Delivery</a></li>
-            <li><a href="#" class="menu-toggle">Pet Food Delivery</a></li>
-            <li><a href="#" class="menu-toggle">Blog</a></li>
-        </ul>
-    </div>
-</nav>
+
 
 
     .container {
