@@ -71,6 +71,31 @@ body {
     margin-right: 1px;
 }
 
+/* 一级菜单点击时的下划线效果 */
+.nav-links > ul > li > a {
+    position: relative;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+/* 激活状态下划线效果 */
+.nav-links > ul > li.active > a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px; /* 🔥 与导航栏底线紧贴 */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #27ae60; /* ✅ 自定义颜色：绿色 */
+    transition: all 0.3s;
+}
+
+/* 鼠标悬停效果 */
+.nav-links > ul > li > a:hover::after {
+    background-color: #2ecc71; /* ✅ 鼠标悬停时的颜色变化 */
+}
+
+
 
 
 
