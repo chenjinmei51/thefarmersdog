@@ -158,8 +158,6 @@ body {
 }
 
 
-
-
 /* 普通链接不显示三角符号 */
 .nav-links li ul.dropdown a:not(.menu-toggle)::after {
     content: '';
@@ -168,7 +166,7 @@ body {
 /* Hero 区块样式 */
 .hero-section {
     background-color: white;
-    padding: 40px 20px;
+    padding: 0px 20px;
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
